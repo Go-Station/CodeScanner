@@ -49,9 +49,9 @@ public struct CodeScannerView: UIViewControllerRepresentable {
                         found(code: stringValue)
                     }
                 case .continuous:
-                   // if isPastScanInterval() {
+                    if isPastScanInterval() {
                         found(code: stringValue)
-                   // }
+                    }
                 }
             }
         }
