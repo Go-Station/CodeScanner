@@ -49,9 +49,9 @@ public struct CodeScannerView: UIViewControllerRepresentable {
                         found(code: stringValue)
                     }
                 case .continuous:
-                    if isPastScanInterval() {
+                   // if isPastScanInterval() {
                         found(code: stringValue)
-                    }
+                   // }
                 }
             }
         }
@@ -248,7 +248,7 @@ public struct CodeScannerView: UIViewControllerRepresentable {
     public var simulatedData = ""
     public var completion: (Result<String, ScanError>) -> Void
 
-  public init(codeTypes: [AVMetadataObject.ObjectType], scanMode: ScanMode = .continuous, scanInterval: Double = 2.0, simulatedData: String = "", completion: @escaping (Result<String, ScanError>) -> Void) {
+  public init(codeTypes: [AVMetadataObject.ObjectType], scanMode: ScanMode = .continuous, scanInterval: Double = 0.5, simulatedData: String = "", completion: @escaping (Result<String, ScanError>) -> Void) {
         self.codeTypes = codeTypes
         self.scanMode = scanMode
         self.scanInterval = scanInterval
